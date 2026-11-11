@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18)
+project(res_mc_mod CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_library(resmod SHARED src/mod.cpp)
+target_link_libraries(resmod log dl)
+target_compile_options(resmod PRIVATE -O2 -fvisibility=hidden -Wall)
+set_target_properties(resmod PROPERTIES OUTPUT_NAME "resmod")
